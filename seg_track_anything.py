@@ -151,9 +151,10 @@ def video_type_input_tracking(SegTracker, input_video, io_args, video_name, fram
                 gc.collect()
                 track_mask = SegTracker.track(frame)
                 # find new objects, and update tracker with new objects
-                new_obj_mask = SegTracker.find_new_objs(track_mask,seg_mask)
-                save_prediction(new_obj_mask, output_mask_dir, str(frame_idx+frame_num).zfill(5) + '_new.png')
-                pred_mask = track_mask + new_obj_mask
+                # new_obj_mask = SegTracker.find_new_objs(track_mask,seg_mask)
+                # save_prediction(new_obj_mask, output_mask_dir, str(frame_idx+frame_num).zfill(5) + '_new.png')
+                # pred_mask = track_mask + new_obj_mask
+                pred_mask = track_mask
                 # segtracker.restart_tracker()
                 SegTracker.add_reference(frame, pred_mask)
             else:
@@ -280,9 +281,10 @@ def img_seq_type_input_tracking(SegTracker, io_args, video_name, imgs_path, fps,
                 gc.collect()
                 track_mask = SegTracker.track(frame)
                 # find new objects, and update tracker with new objects
-                new_obj_mask = SegTracker.find_new_objs(track_mask,seg_mask)
-                save_prediction(new_obj_mask, output_mask_dir, f'{frame_name}_new.png')
-                pred_mask = track_mask + new_obj_mask
+                # new_obj_mask = SegTracker.find_new_objs(track_mask,seg_mask)
+                # save_prediction(new_obj_mask, output_mask_dir, f'{frame_name}_new.png')
+                # pred_mask = track_mask + new_obj_mask
+                pred_mask = track_mask
                 # segtracker.restart_tracker()
                 SegTracker.add_reference(frame, pred_mask)
             else:
