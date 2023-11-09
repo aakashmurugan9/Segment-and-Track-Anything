@@ -458,7 +458,7 @@ def seg_track_app():
         gr.Markdown(
             '''
             <div style="text-align:center;">
-                <span style="font-size:3em; font-weight:bold;">Segment and Track Anything(SAM-Track)</span>
+                <span style="font-size:3em; font-weight:bold;">Novanta's Segmentation and Tracking</span>
             </div>
             '''
         )
